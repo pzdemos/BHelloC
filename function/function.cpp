@@ -48,14 +48,37 @@ void func4(int a){
 void func4(double a){
     cout<< "func 4(double a) 的调用！！"<<endl;
 }
+/**
+ * 函数重载的注意事项
+ * */
+ /*1.引用作为重载的条件*/
+void func5(int &a){ //int &a = 10;?不合法
+    cout<< " func5(int &a) 调用"<<endl;
+}
+void func5(const int &a){// const int &a = 10;?
+    cout<< " func5(const int &a) 调用"<<endl;
+}
+ /*2，函数重载到默认参数*/
+void func6(int a,int b = 10){
+    cout<< "func6(int a,int b)的调用"<<endl;
+}
+void func6(int a){
+    cout<< "func6(int a)的调用"<<endl;
+}
 int main(){
     /*1. 函数的默认参数*/
-    cout<< func(10,30)<<endl;
-    /*2. 函数占位参数*/
-    func3(10);
-    /*3. 函数的重载*/
-    func4();
-    func4(10);
-    func4(3.14);
-//
+//    cout<< func(10,30)<<endl;
+//    /*2. 函数占位参数*/
+//    func3(10);
+//    /*3. 函数的重载*/
+//    func4();
+//    func4(10);
+//    func4(3.14);
+    /*注意事项*/
+//    int a =10;
+//    func5(a);//func5(int &a)
+//    func5(10);//func5(const int &a)
+
+//    func6(10);//当函数重载遇见默认参数出现二义性?，避免
+
 }
