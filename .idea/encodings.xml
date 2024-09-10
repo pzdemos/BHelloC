@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/ClassObject/class.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/ClassObject/privateAttribute/private.cpp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/MemoryModelBefore/before.cpp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/function/function.cpp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/main.cpp" charset="GBK" />
