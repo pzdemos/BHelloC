@@ -23,16 +23,27 @@ public:
         return 2 * PI * m_r;
     }
 };
-
 //设计一个学生类，属性有姓名和学号，可以给姓名和学号赋值，可以显示学生的姓名和学号
 class Student{
-public:
+public://
+    //类中的属性和行为统一称为成员
+    //属性 成员属性 成员变量
+    //行为 成员函数 成员方法
+    //属性
     string stuName;
     string stuId;
     string printStuInfo(){
         return "姓名："+stuName+" 学号："+stuId;
     }
+    //给姓名赋值
+    void setName(string name){
+        stuName = name;
+    }
+    void setId(string Id){
+        stuId = Id;
+    }
 };
+// 优化版学生类
 int main(){
     /*通过圆类 创建具体的圆（对象）*/
 //    实例化
@@ -42,7 +53,9 @@ int main(){
     cout<< "圆的周长为"<<c1.calculate()<<endl;
 
     Student s1;
-    s1.stuId = "20200220230320";
-    s1.stuName = "照旧";
+//    s1.stuId = "20200220230320";
+    s1.setId("20200220230320");
+//    s1.stuName = "照旧";
+    s1.setName("照旧");
     cout<<""<<s1.printStuInfo()<<endl;
 }
