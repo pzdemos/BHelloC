@@ -43,13 +43,29 @@ public://
         stuId = Id;
     }
 };
-// 优化版学生类
+/*访问权限*/
+//公共权限: 成员类内能访问 类外也能访问 public
+//保护权限： 类内能访问 类外不能访问 protected? 父传子
+//私有权限   类内能访问 类外不能访问 private ? 父私有
+class Person{
+public:
+    string mName;
+protected:
+    string mCar;
+private:
+    int mPassWord;
+public://private:protected:
+    void func(){
+        mName="照旧";
+        mCar="兰博基尼";
+        mPassWord=123456;
+    }
+};
 int main(){
     /*通过圆类 创建具体的圆（对象）*/
 //    实例化
     Circle c1;
     c1.m_r = 2;
-
     cout<< "圆的周长为"<<c1.calculate()<<endl;
 
     Student s1;
@@ -58,4 +74,12 @@ int main(){
 //    s1.stuName = "照旧";
     s1.setName("照旧");
     cout<<""<<s1.printStuInfo()<<endl;
+
+    /*访问权限*/
+    Person p1;
+    p1.mName = "jack";
+    //?'mCar' is a protected member of 'Person' 权限不足
+//    p1.mCar = "BYO";
+    // ?'mPassWord' is a private member of 'Person' 权限不足
+//    p1.mPassWord=123456;
 }
