@@ -61,25 +61,43 @@ public://private:protected:
         mPassWord=123456;
     }
 };
+/**
+ * 在C++中 struct和class唯一的区别就在于? 默认的访问权限不同
+区别：
+* struct 默认权限为公共
+* class   默认权限为私有
+ */
+class C1{
+    int man;
+};
+struct C2{
+    int man;
+};
 int main(){
     /*通过圆类 创建具体的圆（对象）*/
 //    实例化
-    Circle c1;
-    c1.m_r = 2;
-    cout<< "圆的周长为"<<c1.calculate()<<endl;
-
-    Student s1;
-//    s1.stuId = "20200220230320";
-    s1.setId("20200220230320");
-//    s1.stuName = "照旧";
-    s1.setName("照旧");
-    cout<<""<<s1.printStuInfo()<<endl;
-
-    /*访问权限*/
-    Person p1;
-    p1.mName = "jack";
+//    Circle c1;
+//    c1.m_r = 2;
+//    cout<< "圆的周长为"<<c1.calculate()<<endl;
+//
+//    Student s1;
+////    s1.stuId = "20200220230320";
+//    s1.setId("20200220230320");
+////    s1.stuName = "照旧";
+//    s1.setName("照旧");
+//    cout<<""<<s1.printStuInfo()<<endl;
+//
+//    /*访问权限*/
+//    Person p1;
+//    p1.mName = "jack";
     //?'mCar' is a protected member of 'Person' 权限不足
 //    p1.mCar = "BYO";
     // ?'mPassWord' is a private member of 'Person' 权限不足
 //    p1.mPassWord=123456;
+
+    /*struct和class的区别*/
+    C1 k1;
+//    k1.man = 100;//?
+    C2 c2;
+    c2.man = 100;//?
 }
